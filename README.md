@@ -1,14 +1,14 @@
 # SQLite3 Commands Guide
 
 ## Introduction
-SQLite3 ek lightweight aur self-contained database hai jo command-line interface (CLI) par operate karta hai. Yeh guide SQLite3 ke basic commands ko step-by-step define karti hai.
+SQLite3 is a lightweight and self-contained database that operates via the command-line interface (CLI). This guide provides a step-by-step explanation of basic SQLite3 commands.
 
 ---
 
 ## Step-by-Step Commands
 
-### 1. SQLite3 Start Karna
-Sabse pehle, SQLite3 start karne ke liye terminal ya command prompt open karein aur yeh command likhein:
+### 1. Starting SQLite3
+First, open the terminal or command prompt and enter the following command:
 ```sh
 sqlite3
 ```
@@ -18,34 +18,34 @@ SQLite version 3.39.2 2022-07-21 15:24:47
 Enter ".help" for usage hints.
 sqlite>
 ```
-Yeh SQLite3 shell open karega.
+This will open the SQLite3 shell.
 
-### 2. Database Open ya Create Karna
-Agar aapke paas pehle se ek database hai, toh usko open karein. Agar nahi hai, toh yeh command ek naya database create kar dega:
+### 2. Opening or Creating a Database
+If you already have a database, you can open it. If not, this command will create a new one:
 ```sh
 .open mydatabase.db
 ```
-**Output:** (Koi visible output nahi hoga, lekin database open ho jayega)
+**Output:** (No visible output, but the database will be opened)
 ```
 sqlite>
 ```
 
-### 3. Available Tables Check Karna
-Database ke andar jitni tables mojood hain, unko dekhne ke liye yeh command use karein:
+### 3. Checking Available Tables
+To see the tables present in the database, use the following command:
 ```sh
 .tables
 ```
-**Output (Agar koi table nahi hai):**
+**Output (If no tables exist):**
 ```
 sqlite>
 ```
-**Output (Agar tables mojood hain):**
+**Output (If tables exist):**
 ```
 users   orders   products
 ```
 
-### 4. Table Ki Data Check Karna
-Kisi bhi table ke andar mojood data ko check karne ke liye yeh command use karein:
+### 4. Checking Table Data
+To view the data inside a specific table, use this command:
 ```sh
 SELECT * FROM users;
 ```
@@ -58,13 +58,13 @@ id  | name     | age
 3   | Ahmed    | 30
 ```
 
-### 5. Output Formatting Improve Karna
-Default output readable nahi hota, isliye formatting improve karne ke liye yeh commands use karein:
+### 5. Improving Output Formatting
+By default, the output may not be easily readable. To improve formatting, use these commands:
 ```sh
 .mode column
 .headers on
 ```
-Phir dobara data dekhne ke liye:
+Then, check the data again:
 ```sh
 SELECT * FROM users;
 ```
@@ -77,24 +77,26 @@ id  name   age
 3   Ahmed  30   
 ```
 
-### 6. Data Ko CSV Format Mein Export Karna
-Agar aap table ka data CSV format mein export karna chahte hain, toh yeh commands use karein:
+### 6. Exporting Data to CSV Format
+If you want to export the table data to a CSV file, use the following commands:
 ```sh
 .mode csv
 .output users.csv
 SELECT * FROM users;
 .output stdout
 ```
-**Output (Terminal pe koi response nahi milega, lekin `users.csv` file create ho jayegi):**
+**Output (No terminal response, but `users.csv` file will be created):**
 ```
 sqlite>
 ```
-Agar aap CSV file ko manually check karna chahein toh kisi text editor ya spreadsheet software mein open karein.
+To check the CSV file, open it in a text editor or spreadsheet software.
 
 ---
 
 ## Conclusion
-Yeh basic SQLite3 commands hain jo kisi bhi beginner ke liye kaafi madadgaar ho sakti hain. Agar aap aur advance queries ya indexing seekhna chahein toh SQLite3 ki official documentation bhi check kar sakte hain.
+These are the basic SQLite3 commands that are useful for beginners. If you want to learn more about advanced queries or indexing, refer to the official SQLite3 documentation.
 
 Happy Coding! 🎉
+
+**Written by: Muzaffar Ahmed**
 
